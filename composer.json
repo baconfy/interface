@@ -22,7 +22,9 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Baconfy\\Interface\\Tests\\": "tests/"
+      "Baconfy\\Interface\\Tests\\": "tests/",
+      "Baconfy\\Interface\\Tests\\Fixtures\\Notes\\": "tests/Fixtures/notes/src/",
+      "Baconfy\\Interface\\Tests\\Fixtures\\Admin\\": "tests/Fixtures/admin/src/"
     }
   },
   "extra": {
@@ -33,9 +35,15 @@
     }
   },
   "scripts": {
-    "lint": ["pint --parallel"],
-    "lint:check": ["pint --parallel --test"],
-    "types:check": ["phpstan analyse"],
+    "lint": [
+      "pint --parallel"
+    ],
+    "lint:check": [
+      "pint --parallel --test"
+    ],
+    "types:check": [
+      "phpstan analyse"
+    ],
     "test": [
       "@lint:check",
       "@types:check",
