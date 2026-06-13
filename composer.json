@@ -1,0 +1,50 @@
+{
+  "name": "baconfy/interface",
+  "description": "Application shell, launcher and design system for the Baconfy ecosystem.",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^8.3",
+    "baconfy/core": "^0.1.1",
+    "illuminate/support": "^12.0|^13.0",
+    "inertiajs/inertia-laravel": "^2.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^10.0|^11.0",
+    "larastan/larastan": "^3.9",
+    "pestphp/pest": "^3.7|^4.0",
+    "laravel/pint": "^1.13"
+  },
+  "autoload": {
+    "psr-4": {
+      "Baconfy\\Interface\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Baconfy\\Interface\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Baconfy\\Interface\\InterfaceServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "lint": ["pint --parallel"],
+    "lint:check": ["pint --parallel --test"],
+    "types:check": ["phpstan analyse"],
+    "test": [
+      "@lint:check",
+      "@types:check",
+      "pest"
+    ]
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}
